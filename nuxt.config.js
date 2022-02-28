@@ -39,5 +39,12 @@ export default {
   server:{
     // host: 0,
     port: process.env.NODE_ENV === 'production' ? null : 4000,
-  }
+  },
+
+  // evn config
+  env: {
+    baseURL: process.env.NODE_ENV === 'production' 
+    ? `https://my-json-server.typicode.com/mds1262/moon-nuxt-test-api` 
+    : `http://localhost:3000`,
+  },
 }
