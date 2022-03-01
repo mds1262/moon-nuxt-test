@@ -20,11 +20,29 @@
 <script>
 import { createCartItem, fetchProductById } from '@/api'
 export default {
+  
   async asyncData({ params }) {
     const id = params.id
     const response = await fetchProductById(id)
     const product = response.data
     return { product }
+  },
+
+  head: {
+    title: 'Shopping Item',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: '이 상품은 ~~ 입니다',
+      }
+    ],
+    // link:[
+    //   {
+    //     rel: '',
+    //     href: '',
+    //   }
+    // ],
   },
 
   methods: {
